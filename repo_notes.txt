@@ -1,0 +1,16 @@
+Commit messages to use:
+- Initial scaffold and sample data
+- Add improved README and robust OpenAI parsing in run_classification.py
+- Add Streamlit demo stub, demo script, and LinkedIn summary
+- Prepare repository for public release (LICENSE, .gitignore)
+
+Git commands to initialize and push (replace <your-username> and repo name)
+git init
+git add .
+git commit -m "Initial commit — GenAI review categorization case study and code"
+# Create repo on GitHub (using gh CLI)
+# gh repo create <your-username>/genai-review-categorization --public --source=. --remote=origin --push
+# OR create on GitHub manually, then:
+git remote add origin git@github.com:<your-username>/genai-review-categorization.git
+git branch -M main
+git push -u origin main
