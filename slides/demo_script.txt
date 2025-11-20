@@ -1,0 +1,19 @@
+2-minute demo script — GenAI Review Categorization
+
+0:00–0:10  — Opening
+“Hi, I’m Muhammad Ali Malik. I built a GenAI-powered review categorization system as part of the MIT No-Code AI program. In 2 minutes I’ll show the problem, the approach, and a quick demo.”
+
+0:10–0:30 — Problem & Impact
+“Businesses collect thousands of customer reviews but lack systematic triage to prioritize issues. Our system classifies sentiment, tags topics, assigns business priority, and generates a first-response draft — all automatically.”
+
+0:30–0:55 — Approach
+“We use prompt engineering with zero-shot, one-shot, and chain-of-thought styles to coax structured JSON outputs from an LLM. The pipeline ingests CSVs, runs the model, post-processes into CSV/JSON, and feeds a dashboard or email workflow.”
+
+0:55–1:30 — Live demo walkthrough (use the Streamlit mock demo)
+“Here’s the demo: upload a CSV, press ‘Run’, and see classified results. Positive reviews are flagged High priority, neutrals Medium, negatives Low. Each review includes tags, a suggested action for the ops team, and a first-response draft.”
+
+1:30–1:50 — Business outcomes
+“Outcomes: faster triage, improved response time, actionable insights for operations, and a reusable template for any product feedback pipeline.”
+
+1:50–2:00 — Closing & Call to action
+“I’m looking to apply these skills in roles focused on product feedback, AI tooling, or AI QA. Find the repo at `genai-review-categorization` and reach out to me on LinkedIn.”
