@@ -1,0 +1,7 @@
+LinkedIn Summary (short)
+
+AI-enabled Product Feedback Analyst | QA-focused GenAI practitioner
+
+I build practical, business-focused GenAI solutions that turn customer feedback into prioritized actions. 
+I designed and delivered a GenAI Review Categorization system (MIT No-Code AI final project) that classifies sentiment, tags topics, prioritizes issues, and generates customer-first responses — all with reusable prompt engineering and lightweight deployment patterns. 
+Seeking roles in AI Product, AI QA, or Feedback Intelligence where I can apply prompt engineering, LLM evaluation, and automation skills to deliver measurable outcomes.
