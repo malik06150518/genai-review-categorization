@@ -1,6 +1,9 @@
 import streamlit as st
 import pandas as pd
 import os
+import sys
+import os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 from scripts.run_classification import mock_classify
 
 st.title("GenAI Review Classification Demo")
