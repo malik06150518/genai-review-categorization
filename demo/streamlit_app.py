@@ -3,6 +3,7 @@
 import streamlit as st
 import pandas as pd
 import subprocess, os, csv, tempfile
+import os
 
 st.title('GenAI Review Categorization — Demo (Mock Mode)')
 
@@ -16,7 +17,8 @@ if uploaded is not None:
         tmp_in = tempfile.NamedTemporaryFile(delete=False, suffix='.csv')
         df.to_csv(tmp_in.name, index=False)
         tmp_out = os.path.join('results', 'streamlit_output.csv')
-        os.makedirs('results', exist_ok=True)
+        RESULTS_DIR = "/mount/tmp/results"
+        os.makedirs(RESULTS_DIR, exist_ok=True)
         # Call the script in mock mode
         subprocess.run(['python', 'scripts/run_classification.py', '--input', tmp_in.name, '--output', tmp_out, '--mode', 'mock'])
         out_df = pd.read_csv(tmp_out)
