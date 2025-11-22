@@ -2,15 +2,15 @@ import os
 import sys
 import streamlit as st
 import pandas as pd
+import tempfile
 
 # Ensure repo root is on the import path (works on Streamlit Cloud)
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 if ROOT not in sys.path:
     sys.path.insert(0, ROOT)
 
-# Writable dir for Streamlit Cloud
-RESULTS_DIR = "/mount/tmp/results"
-os.makedirs(RESULTS_DIR, exist_ok=True)
+# Use Python's tempfile for Streamlit Cloud compatibility
+RESULTS_DIR = tempfile.mkdtemp()
 
 # Try to import the mock classifier from scripts
 try:
@@ -71,10 +71,13 @@ if uploaded:
         st.success("Processing complete!")
         st.dataframe(results_df)
 
-        # Save & provide download
-        out_path = os.path.join(RESULTS_DIR, "results.csv")
-        results_df.to_csv(out_path, index=False)
-        with open(out_path, "rb") as f:
-            st.download_button("Download results CSV", data=f, file_name="genai_results.csv", mime="text/csv")
+        # Provide download directly from dataframe (no need to save to disk first)
+        csv = results_df.to_csv(index=False)
+        st.download_button(
+            "Download results CSV", 
+            data=csv, 
+            file_name="genai_results.csv", 
+            mime="text/csv"
+        )
 else:
     st.info("Upload a CSV to begin.")
