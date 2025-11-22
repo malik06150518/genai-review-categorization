@@ -5,7 +5,7 @@ Supports mock mode for offline testing and an OpenAI mode that attempts to parse
 import os, csv, argparse, json, time, re
 from pathlib import Path
 
-PROMPT_TEMPLATE = Path(__file__).parent.parent.joinpath('prompts','zero_shot.md').read_text(encoding='utf-8')
+PROMPT_TEMPLATE = Path(__file__).parent.parent.joinpath('prompts','Zero-shot.md').read_text(encoding='utf-8')
 
 def mock_process(review_id, review_text):
     lower = review_text.lower()
