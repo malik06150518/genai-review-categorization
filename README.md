@@ -8,6 +8,12 @@ This repository contains a GenAI demonstration that classifies and prioritizes c
 - Assigns business priority (High / Medium / Low)
 - Generates suggested actions and first-response drafts
 
+# GenAI Review Classification Demo
+
+🚀 [**Live Demo**](https://customerreviewtest.streamlit.app) - Try it now!
+ -- **Download the CSV file from the data folder and use it for the live demo!!**
+
+
 ## Getting started
 1. Clone the repo
 2. Add a `data/reviews_sample.csv` file with columns: customer_id, review
