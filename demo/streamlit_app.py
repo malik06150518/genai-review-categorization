@@ -14,7 +14,7 @@ RESULTS_DIR = tempfile.mkdtemp()
 
 # Try to import the mock classifier from scripts
 try:
-    from scripts.run_classification import mock_classify, run_mock, run_openai
+    from scripts.run_classification import mock_process, run_mock, run_openai
 except Exception as e:
     st.error(
         "Import error: could not import scripts.run_classification.\n\n"
