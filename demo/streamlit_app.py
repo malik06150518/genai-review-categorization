@@ -51,7 +51,8 @@ if uploaded:
 
         if mode == "mock":
             for _, row in df.iterrows():
-                results.append(mock_classify(row.get("customer_id", ""), row.get("review", "")))
+                # FIXED: Changed from mock_classify to mock_process
+                results.append(mock_process(row.get("customer_id", ""), row.get("review", "")))
         else:
             # OpenAI mode — will attempt to run run_openai on the uploaded file.
             # This expects OPENAI_API_KEY available in environment/st.secrets
