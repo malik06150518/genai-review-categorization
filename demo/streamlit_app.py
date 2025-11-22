@@ -1,11 +1,29 @@
+import os
+import sys
 import streamlit as st
 import pandas as pd
-import os
-from scripts.run_classification import mock_classify
 
-# Streamlit Cloud: use writable temp directory
+# Ensure repo root is on the import path (works on Streamlit Cloud)
+ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+if ROOT not in sys.path:
+    sys.path.insert(0, ROOT)
+
+# Writable dir for Streamlit Cloud
 RESULTS_DIR = "/mount/tmp/results"
 os.makedirs(RESULTS_DIR, exist_ok=True)
+
+# Try to import the mock classifier from scripts
+try:
+    from scripts.run_classification import mock_classify
+except Exception as e:
+    st.error(
+        "Import error: could not import scripts.run_classification.\n\n"
+        "Make sure `scripts/run_classification.py` exists and the file and folder names are correct (no .rtf or colon ':' in names)."
+    )
+    st.write("Detailed error:")
+    st.exception(e)
+    # Stop further execution
+    st.stop()
 
 st.title("GenAI Review Classification Demo")
 
@@ -25,7 +43,6 @@ if uploaded:
     output_path = os.path.join(RESULTS_DIR, "output.csv")
     pd.DataFrame(results).to_csv(output_path, index=False)
 
-    st.write("Download processed results:")
     with open(output_path, "rb") as file:
         st.download_button(
             label="Download CSV",
