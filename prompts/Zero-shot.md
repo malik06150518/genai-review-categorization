@@ -1,8 +1,19 @@
 # Zero-shot prompt template
 
-You are an analyst. For the following customer review, classify the sentiment as Positive, Neutral, or Negative. 
-Tag the review for topics (choose from: food, quality, service, ambiance, price, overall). Assign a priority: High for Positive, Medium for Neutral, Low for Negative. 
-Suggest one actionable next step for operations and write a first response message to the customer. 
-Output as a single CSV row with columns: customer_id, sentiment, tags, priority, action, first_response.
+You are an AI model performing customer feedback analysis.
 
+Return ONLY valid JSON.  
+Do NOT include commentary, explanation, or markdown.
+
+The JSON object MUST contain:
+- customer_id
+- sentiment
+- tags
+- priority
+- action
+- first_response
+
+Classify the following review:
+
+Customer ID: <CUSTOMER_ID>
 Review: "<REVIEW_TEXT>"
