@@ -10,7 +10,7 @@ This repository contains a GenAI demonstration that classifies and prioritizes c
 
 ## Getting started
 1. Clone the repo
-2. Add a `data/reviews.csv` file with columns: customer_id, review
+2. Add a `data/reviews_sample.csv` file with columns: customer_id, review
 3. Option A (No-code): Use LangChain Studio or Microsoft Copilot with the prompts in `/prompts`
 4. Option B (Python): Set `OPENAI_API_KEY` and run `python scripts/run_classification.py --input data/reviews.csv --output results/output.csv`
 
