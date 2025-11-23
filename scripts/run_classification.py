@@ -14,7 +14,7 @@ def mock_process(review_id, review_text):
         tags = ['food'] if any(x in lower for x in ['pasta','dessert','food','pizza','burger']) else ['overall']
         action = 'Acknowledge and promote the praised item.'
         first_response = 'Thank you — we\'re glad you enjoyed your experience!'
-    elif any(w in lower for w in ['cold', 'incorrect', 'not', "didn't", 'bad', 'poor']):
+    elif any(w in lower for w in ['cold', 'incorrect', 'not', "didn't", 'bad', 'poor','Terrible']):
         sentiment = 'Negative'; priority = 'Low'
         tags = ['food','service']
         action = 'Investigate and correct the issue; follow up with customer.'
